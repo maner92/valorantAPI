@@ -1,69 +1,71 @@
-import React, { useState } from "react";
+import React from "react";
 
-function NavBar({ toggleDrawer, drawer }) {
+function NavBar() {
   return (
     <>
       <div className="navbar bg-base-100">
-        <div className="flex-none" onClick={toggleDrawer}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            className="inline-block w-5 h-5 stroke-current"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </div>
-        <div className="flex-1">
-          <span className="btn btn-ghost text-xl normal-case">valorantAPI</span>
-        </div>
-        <div className="flex-none">
-          <div className="form-control">
-            <input
-              type="text"
-              placeholder="Search"
-              className="input input-bordered"
-            />
+        <div className="navbar-start">
+          <div className="dropdown">
+            <label tabIndex={0} className="btn btn-ghost btn-circle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h7"
+                />
+              </svg>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a>Homepage</a>
+              </li>
+              <li>
+                <a>Portfolio</a>
+              </li>
+              <li>
+                <a>About</a>
+              </li>
+            </ul>
           </div>
-          <button className="btn btn-square btn-ghost">
+        </div>
+        <div className="navbar-center">
+          <a className="btn btn-ghost normal-case text-xl">
+            <span>valorant</span>
+            <span className="text-primary">API</span>
+          </a>
+        </div>
+        <div className="navbar-end">
+          <input
+            type="text"
+            placeholder="Search"
+            className="input input-bordered"
+          />
+          <button className="btn btn-ghost ml-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
-              className="inline-block w-5 h-5 stroke-current"
+              stroke="currentColor"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-              ></path>
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
             </svg>
           </button>
-        </div>
-      </div>
-      <div className="flex h-screen">
-        <div
-          className={`w-1/6 bg-base-100 text-white ${
-            drawer ? "hidden" : "block"
-          }`}
-        >
-          <ul className="menu bg-base-100 w-56 ">
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Item 2</a>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul>
         </div>
       </div>
     </>
