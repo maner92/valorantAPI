@@ -2,17 +2,8 @@ import React, { useState } from "react";
 import CardImage from "./CardImage";
 
 function Carousel({ maps }) {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const goToPrevSlide = () => {
-    setCurrentSlide((prevSlide) =>
-      prevSlide === 0 ? maps.length - 1 : prevSlide - 1
-    );
-  };
-
-  console.log(maps);
   return (
-    <div className="carousel h-[40rem]">
+    <div className="carousel h-[60rem]">
       {maps.map((map, i) => (
         <div
           key={map.uuid}
@@ -40,11 +31,11 @@ function Carousel({ maps }) {
               ❯
             </a>
 
-            <div className="absolute top-72 right-5">
+            {/* <div className="absolute top-96 right-5">
               <a>
                 <button className="btn btn-primary">Button</button>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       ))}

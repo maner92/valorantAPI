@@ -1,18 +1,34 @@
 import React from "react";
+import { mapsDescription as data } from "../data/MapsDescription";
 
-function CardImage({ map }) {
+function CardImage({ maps }) {
+  console.log(data);
   return (
-    <div className="card w-full bg-base-100 image-full">
-      <figure>
-        <img src={map.splash} alt="Shoes" />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
-        </div>
-      </div>
+    <div className="flex flex-wrap justify-center">
+      {maps.map(
+        (map, i) =>
+          i !== 8 && (
+            <div
+              key={map.uuid}
+              className="card m-10 lg:card-side bg-base-200 shadow-xl"
+            >
+              <figure className="w-80">
+                <img src={map.displayIcon} alt="Album" />
+              </figure>
+              <div className="card-body w-96">
+                <h1 className="card-title text-white font-bold text-6xl">
+                  {map.displayName}
+                </h1>
+                <h1 className="card-title text-white text-xl">
+                  {map.coordinates}
+                </h1>
+                <text className="card-title text-white text-xl max-w-lg text-justify">
+                  {data[i].description}
+                </text>
+              </div>
+            </div>
+          )
+      )}
     </div>
   );
 }

@@ -20,6 +20,9 @@ function Maps() {
   return (
     <AppLayout>
       <Carousel maps={maps}></Carousel>
+      <div className=" justify-center">
+        <CardImage maps={maps}></CardImage>
+      </div>
     </AppLayout>
   );
 }
