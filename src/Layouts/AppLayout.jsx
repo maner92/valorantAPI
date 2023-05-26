@@ -6,8 +6,8 @@ function AppLayout(props) {
   return (
     <div>
       <NavBar />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="w-full h-screen">{props.children}</div>
+      <div className="">
+        <div className="lg:h-1/2 md:h-96 sm:h-64">{props.children}</div>
       </div>
 
       <Footer />

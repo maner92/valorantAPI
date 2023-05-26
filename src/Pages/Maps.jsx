@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import AppLayout from "../Layouts/AppLayout";
 import Carousel from "../Components/Carousel";
+import CardImage from "../Components/CardImage";
 
 const url = "https://valorant-api.com/v1/maps";
 
