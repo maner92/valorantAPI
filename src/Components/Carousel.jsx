@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import CardImage from "./CardImage";
 
-function Carousel({ maps }) {
+function Carousel(props) {
   return (
     <div className="carousel h-[60rem]">
-      {maps.map((map, i) => (
+      {props.items.map((map, i) => (
         <div
           key={map.uuid}
           id={`slide${i}`}
@@ -19,13 +19,13 @@ function Carousel({ maps }) {
 
           <div className="absolute flex justify-between transform -translate-y-3/4 left-5 right-5 top-1/2">
             <a
-              href={`#slide${i === 0 ? maps.length - 1 : i - 1}`}
+              href={`#slide${i === 0 ? props.items.length - 1 : i - 1}`}
               className="btn btn-circle"
             >
               ❮
             </a>
             <a
-              href={`#slide${i === maps.length - 1 ? 0 : i + 1}`}
+              href={`#slide${i === props.items.length - 1 ? 0 : i + 1}`}
               className="btn btn-circle"
             >
               ❯

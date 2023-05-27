@@ -22,9 +22,9 @@ function CardImage({ maps }) {
                 <h1 className="card-title text-white text-xl">
                   {map.coordinates}
                 </h1>
-                <text className="card-title text-white text-xl max-w-lg text-justify">
+                <div className="card-title text-white text-xl max-w-lg text-justify">
                   {data[i].description}
-                </text>
+                </div>
               </div>
             </div>
           )

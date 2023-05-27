@@ -7,21 +7,21 @@ import CardImage from "../Components/CardImage";
 const url = "https://valorant-api.com/v1/maps";
 
 function Maps() {
-  const [maps, setMaps] = useState([]);
+  const [gameMaps, setGamemaps] = useState([]);
 
   useEffect(() => {
     axios.get(url).then((response) => {
-      setMaps(response.data.data);
+      setGamemaps(response.data.data);
     });
   }, []);
 
-  if (maps.length === 0) return null;
+  if (gameMaps.length === 0) return null;
 
   return (
     <AppLayout>
-      <Carousel maps={maps}></Carousel>
+      <Carousel items={gameMaps}></Carousel>
       <div className=" justify-center">
-        <CardImage maps={maps}></CardImage>
+        <CardImage maps={gameMaps}></CardImage>
       </div>
     </AppLayout>
   );
